@@ -7,7 +7,6 @@
     "dev": "cross-env nodemon --exec ts-node lib/index.ts"
   },
   "keywords": [
-    "koa",
     "微信",
     "微信公众号",
     "模板消息"
@@ -16,12 +15,10 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
-    "koa": "^2.13.4",
     "node-schedule": "^2.1.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
-    "@types/koa": "^2.13.5",
     "@types/node-schedule": "^2.1.0",
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.19",

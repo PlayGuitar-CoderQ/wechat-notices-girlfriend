@@ -7,7 +7,7 @@
     ],
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "dist",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "baseUrl": "./",
@@ -16,7 +16,8 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
   },
   "include": [
     "./lib/*.ts",
