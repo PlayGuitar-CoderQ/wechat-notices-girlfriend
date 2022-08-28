@@ -20,6 +20,7 @@
     "allowJs": false,
     "paths": {
       "@config/*": ["lib/config/*"],
+      "@api/*": ["lib/api/*"]
     }
   },
   "include": [

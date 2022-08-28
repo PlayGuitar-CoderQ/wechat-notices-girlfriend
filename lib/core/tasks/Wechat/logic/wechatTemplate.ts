@@ -1,7 +1,4 @@
-interface WechatTemplate {
-  value: string,
-  color: string
-}
+import type { WechatTemplate } from '@api/wechat/type';
 
 const wechatTemplate: Record<string, WechatTemplate> = {
   test: {
