@@ -1,4 +1,5 @@
-import { TaskBase } from "../base";
+import { TaskBase } from "../../base";
+import { sendTemplate } from './logic';
 
 class WebChat extends TaskBase {
   timed: string;
@@ -10,6 +11,7 @@ class WebChat extends TaskBase {
 
   start() {
     console.log("我是微信");
+    sendTemplate();
   }
 }
 

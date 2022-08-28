@@ -1,9 +1,5 @@
-import WeChat from "./tasks/Wechat";
-import SignIn from "./tasks/SignIn";
-import StartMessage from "./tasks/StartMessage";
+import Wechat from "./tasks/Wechat";
 
 export {
-  WeChat,
-  SignIn,
-  StartMessage
+  Wechat,
 }

@@ -1,4 +1,4 @@
-import { WeChat, SignIn, StartMessage } from './core';
+import { Wechat } from './core';
 import type { TaskBase } from './core/base';
 
 abstract class ServerBase {
@@ -22,9 +22,7 @@ class Server extends ServerBase {
 }
 
 const server = new Server(
-  new WeChat('10 * * * * *'),
-  new SignIn('14 * * * * *'),
-  new StartMessage('16 * * * * *')
+  new Wechat('10 * * * * *'),
 );
 
 export default server;

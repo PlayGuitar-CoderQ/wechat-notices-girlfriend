@@ -4,7 +4,7 @@
   "description": "利用微信公众号的消息通知能力给你的女朋友每日发送通知吧 🌸",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "cross-env nodemon --exec ts-node lib/index.ts"
+    "dev": "cross-env nodemon --exec ts-node -r tsconfig-paths/register lib/index.ts"
   },
   "keywords": [
     "微信",
@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
     "axios": "^0.27.2",
     "node-schedule": "^2.1.0"
   },
@@ -23,6 +24,7 @@
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.19",
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.7.4"
   }
 }

@@ -17,7 +17,10 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@config/*": ["lib/config/*"],
+    }
   },
   "include": [
     "./lib/*.ts",
