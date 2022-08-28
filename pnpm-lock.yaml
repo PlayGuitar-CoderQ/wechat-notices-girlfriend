@@ -6,6 +6,7 @@ specifiers:
   '@types/node-schedule': ^2.1.0
   axios: ^0.27.2
   cross-env: ^7.0.3
+  module-alias: ^2.2.2
   node-schedule: ^2.1.0
   nodemon: ^2.0.19
   ts-node: ^10.9.1
@@ -15,6 +16,7 @@ specifiers:
 dependencies:
   '@types/dotenv': 8.2.0
   axios: 0.27.2
+  module-alias: 2.2.2
   node-schedule: 2.1.0
 
 devDependencies:
@@ -400,6 +402,10 @@ packages:
   /minimist/1.2.6:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
+
+  /module-alias/2.2.2:
+    resolution: {integrity: sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==}
+    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}

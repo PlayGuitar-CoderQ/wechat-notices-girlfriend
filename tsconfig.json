@@ -5,9 +5,9 @@
     "lib": [
       "es6"
     ],
-    "declaration": true,
-    "sourceMap": true,
-    "outDir": "dist",
+    "declaration": false,
+    "sourceMap": false,
+    "outDir": "./dist",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "baseUrl": "./",
@@ -17,16 +17,16 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "allowJs": false,
     "paths": {
       "@config/*": ["lib/config/*"],
     }
   },
   "include": [
-    "./lib/*.ts",
-    "./lib/**/*.ts"
+      "./lib/*.ts",
+      "./lib/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
-  ],
+      "node_modules"
+    ],
 }
