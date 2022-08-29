@@ -33,7 +33,6 @@ jobs:
 
       - name: Install
         run: |
-          cd wechat-notices-girlfriend
           pnpm install
       
       - name: Build Dist
