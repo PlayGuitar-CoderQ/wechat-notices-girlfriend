@@ -10,7 +10,6 @@ class WebChat extends TaskBase {
   }
 
   start() {
-    console.log("我是微信");
     sendTemplate();
   }
 }

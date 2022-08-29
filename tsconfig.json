@@ -18,6 +18,10 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": false,
+    "types": [
+      "jest",
+      "node"
+    ],
     "paths": {
       "@config/*": ["lib/config/*"],
       "@api/*": ["lib/api/*"]

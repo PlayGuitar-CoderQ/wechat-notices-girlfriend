@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsnd -r tsconfig-paths/register lib/index.ts --files",
     "prod": "pm2 start ./dist/index.js --name schedule-task -- --port 5200",
-    "build": "tsc && tsc-alias"
+    "build": "tsc && tsc-alias",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "微信",
@@ -23,9 +24,13 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/jest": "^28.1.8",
+    "@types/node": "^18.7.13",
     "@types/node-schedule": "^2.1.0",
     "cross-env": "^7.0.3",
+    "jest": "^29.0.1",
     "nodemon": "^2.0.19",
+    "ts-jest": "^28.0.8",
     "ts-node": "^10.9.1",
     "tsc-alias": "^1.7.0",
     "tsconfig-paths": "^4.1.0",
