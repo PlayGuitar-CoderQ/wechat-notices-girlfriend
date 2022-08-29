@@ -7,11 +7,6 @@ on:
   pull_request:
     branches: [test]
 
-env:
-  SERVER_IP: ${{ secrets.BAIDU_SERVICE_PUBLIC_IP }}
-  SERVER_PASSWORD: ${{ secrets.BAIDU_SERVICE_PASSWORD }}
-  SERVER_ACCOUNT: ${{ secrets.BAIDU_SERVICE_ACCOUNT }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -38,9 +33,9 @@ jobs:
           WELCOME: "ssh scp ssh pipelines"
           LASTSSH: "Doing something after copying"
         with:
-          host: ${{ SERVER_IP }}
-          user: ${{ SERVER_ACCOUNT }}
-          pass: ${{ SERVER_PASSWORD }}
+          host: ${{ secrets.BAIDU_SERVICE_PUBLIC_IP }}
+          user: ${{ secrets.BAIDU_SERVICE_ACCOUNT }}
+          pass: ${{ secrets.BAIDU_SERVICE_PASSWORD }}
           connect_timeout: 10s
           local: './dist/*'
           remote: '/home/task/'
