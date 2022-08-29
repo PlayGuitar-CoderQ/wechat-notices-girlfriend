@@ -33,10 +33,10 @@ jobs:
 
       - name: Install
         run: |
-          pnpm install
+          npm install
       
       - name: Build Dist
-        run: pnpm build
+        run: npm run build
       
       - name: Deploy 🪐
         uses: cross-the-world/scp-pipeline@master
