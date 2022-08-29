@@ -3,9 +3,11 @@ name: test ci build
 on:
   push:
     # test 发生 push 的时候触发 workflow
-    branches: [test]
+    branches:
+      - test
   pull_request:
-    branches: [test]
+    branches:
+      - test
 
 jobs:
   build:
