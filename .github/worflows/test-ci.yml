@@ -1,0 +1,46 @@
+name: test ci build
+
+on:
+  push:
+    # test 发生 push 的时候触发 workflow
+    branches: [test]
+  pull_request:
+    branches: [test]
+
+env:
+  SERVER_IP: ${{ secrets.BAIDU_SERVICE_PUBLIC_IP }}
+  SERVER_PASSWORD: ${{ secrets.BAIDU_SERVICE_PASSWORD }}
+  SERVER_ACCOUNT: ${{ secrets.BAIDU_SERVICE_ACCOUNT }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v3
+
+      - name: 'Dependency Review'
+        uses: actions/dependency-review-action@v2
+
+      - name: Install
+        run: |
+          cd wechat-notices-girlfriend
+          pnpm install
+      
+      - name: Build Dist
+        run: pnpm build
+      
+      - name: Deploy 🪐
+        uses: cross-the-world/scp-pipeline@master
+        env: 
+          WELCOME: "ssh scp ssh pipelines"
+          LASTSSH: "Doing something after copying"
+        with:
+          host: ${{ SERVER_IP }}
+          user: ${{ SERVER_ACCOUNT }}
+          pass: ${{ SERVER_PASSWORD }}
+          connect_timeout: 10s
+          local: './dist/*'
+          remote: '/home/task/'
