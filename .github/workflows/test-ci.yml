@@ -10,16 +10,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'TypeScript' ]
     
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
 
-      - name: 'Dependency Review'
-        uses: actions/dependency-review-action@v2
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
         with:
-          base-ref: ${{ github.event.pull_request.base.ref }}
-          head-ref: ${{ github.event.pull_request.head.ref }}
+          languages: ${{ matrix.language }}
+    
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
 
       - name: Install
         run: |
