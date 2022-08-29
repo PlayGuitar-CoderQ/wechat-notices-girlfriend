@@ -22,7 +22,7 @@ class Server extends ServerBase {
 }
 
 const server = new Server(
-  new Wechat('10 * * * * *'),
+  new Wechat('0 0 20 * * *'),
 );
 
 export default server;
