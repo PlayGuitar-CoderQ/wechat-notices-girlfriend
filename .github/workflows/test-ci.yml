@@ -53,6 +53,7 @@ jobs:
           username: ${{ secrets.BAIDU_SERVICE_ACCOUNT }}
           password: ${{ secrets.BAIDU_SERVICE_PASSWORD }}
           script: |
+            source /etc/profile
             cd /home/task
             pnpm install
             pnpm build
