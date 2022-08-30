@@ -15,10 +15,19 @@ jobs:
       fail-fast: false
       matrix:
         language: [ 'TypeScript' ]
+        node-version: [15]
     
     steps:
-      - name: 'Checkout Repository'
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
@@ -32,13 +41,10 @@ jobs:
         uses: github/codeql-action/analyze@v2
 
       - name: Install
-        run: |
-          pwd
-          ls
-          npm install
+        run: pnpm install
       
       - name: Build Dist
-        run: npm run build
+        run: pnpm build
       
       - name: Deploy 🪐
         uses: cross-the-world/scp-pipeline@master
