@@ -68,6 +68,7 @@ jobs:
           username: ${{ secrets.BAIDU_SERVICE_ACCOUNT }}
           password: ${{ secrets.BAIDU_SERVICE_PASSWORD }}
           script: |
+            cd /home/dist
             ls -al
             pm2 stop schedule-task
             pm2 delete schedule-task
