@@ -46,6 +46,7 @@ jobs:
       - name: Build Dist
         run: pnpm build
       
+      # 上传构建好的文件到服务器
       - name: Deploy 🪐
         uses: cross-the-world/scp-pipeline@master
         env: 
@@ -58,3 +59,15 @@ jobs:
           connect_timeout: 10s
           local: './dist/*'
           remote: '/home/dist/'
+
+      # ssh 到服务器执行部署命令
+      - name: Executing remote ssh commands
+        uses: appleboy/ssh-action@master
+           with:
+            host: ${{ secrets.BAIDU_SERVICE_PUBLIC_IP }}
+            username: ${{ secrets.BAIDU_SERVICE_ACCOUNT }}
+            password: ${{ secrets.BAIDU_SERVICE_PASSWORD }}
+            script: |
+              pm2 stop schedule-task
+              pm2 delete schedule-task
+              pm2 start /home/dist/index.js --name schedule-task -- --port 5200
