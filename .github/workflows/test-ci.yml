@@ -72,4 +72,4 @@ jobs:
             ls -al
             pm2 stop schedule-task
             pm2 delete schedule-task
-            pm2 start ./index.js --name schedule-task -- --port 5200
+            pm2 start index.js --name schedule-task -- --port 5200
