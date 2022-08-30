@@ -57,4 +57,4 @@ jobs:
           pass: ${{ secrets.BAIDU_SERVICE_PASSWORD }}
           connect_timeout: 10s
           local: './dist/*'
-          remote: '/home/task/'
+          remote: '/home/task'
