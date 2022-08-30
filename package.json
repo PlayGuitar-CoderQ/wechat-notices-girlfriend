@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsnd -r tsconfig-paths/register lib/index.ts --files",
-    "prod": "pm2 start ./dist/index.js --name schedule-task -- --port 5200",
+    "prod": "pm2 stop schedule-task && pm2 delete schedule-task && pm2 start ./dist/index.js --name schedule-task -- --port 5200",
     "build": "tsc && tsc-alias",
     "test:watch": "jest --watch"
   },

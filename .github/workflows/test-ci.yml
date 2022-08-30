@@ -57,8 +57,8 @@ jobs:
           user: ${{ secrets.BAIDU_SERVICE_ACCOUNT }}
           pass: ${{ secrets.BAIDU_SERVICE_PASSWORD }}
           connect_timeout: 10s
-          local: './dist/*'
-          remote: '/home/dist/'
+          local: './*'
+          remote: '/home/task/'
 
       # ssh 到服务器执行部署命令
       - name: Executing remote ssh commands
@@ -68,11 +68,7 @@ jobs:
           username: ${{ secrets.BAIDU_SERVICE_ACCOUNT }}
           password: ${{ secrets.BAIDU_SERVICE_PASSWORD }}
           script: |
-            cd /home/dist
-            ls -al
-            pm2 stop schedule-task
-            pm2 delete schedule-task
-            pm2 start index.js --name schedule-task -- --port 5200
-            pm2 list
-            pm2 list
+            pnpm install
+            pnpm build
+            pnpm prod
             pm2 list

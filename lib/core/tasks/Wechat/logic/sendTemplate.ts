@@ -24,7 +24,7 @@ const sendTemplate = async () => {
     access_token: accessTokenRes?.access_token
   })
  } catch(err) {
-  throw new Error(err)
+  console.log(err);
  }
 }
 

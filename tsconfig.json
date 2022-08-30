@@ -3,13 +3,13 @@
     "target": "ESNEXT",
     "module": "commonjs",
     "lib": [
-      "es6"
+      "es6",
     ],
     "declaration": false,
     "sourceMap": false,
     "outDir": "./dist",
     "noImplicitAny": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Node16",
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
