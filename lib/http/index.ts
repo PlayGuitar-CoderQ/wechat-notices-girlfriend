@@ -21,8 +21,18 @@ function createWechatAxios() {
   })
 }
 
+function createSignInAxios() {
+  return new HttpAxios({
+    baseURL: "https://api.juejin.cn"
+  }, {
+    isTransformResponse: true
+  })
+}
+
 const wechatHttp = createWechatAxios();
+const signInHttp = createSignInAxios();
 
 export {
-  wechatHttp
+  wechatHttp,
+  signInHttp
 }
