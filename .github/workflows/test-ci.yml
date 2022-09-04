@@ -4,7 +4,7 @@ on:
   push:
     # test 发生 push 的时候触发 workflow
     branches:
-      - developer
+      - test
 
 jobs:
   build:
