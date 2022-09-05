@@ -30,3 +30,9 @@ export interface SendTemplateRes {
   errmsg: string;
   msgid: number;
 }
+
+export interface LoveTalkRes {
+  code: number,
+  msg: string,
+  newslist: { content: string }[]
+}

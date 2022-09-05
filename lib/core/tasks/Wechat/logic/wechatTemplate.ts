@@ -1,13 +1,9 @@
 import type { WechatTemplate } from '@api/wechat/type';
 
 const wechatTemplate: Record<string, WechatTemplate> = {
-  test: {
-    value: '测试',
-    color: "#173177"
-  },
-  user: {
-    value: 'coderQ',
-    color: "#191"
+  love: {
+    value: '今天没有土味情话了 哈哈！',
+    color: "#FFC0CB"
   }
 }
 

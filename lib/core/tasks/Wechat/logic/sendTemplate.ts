@@ -1,5 +1,5 @@
 import { wechatTemplate } from './wechatTemplate'
-import { getAccessToken, postSendTemplate } from '@api/wechat';
+import { getAccessToken, postSendTemplate, getLoveTalk } from '@api/wechat';
 import {
   WECHAT_TOUSER,
   WECHAT_TEMPLATE_ID,
@@ -9,6 +9,11 @@ import {
 
 const sendTemplate = async () => {
  try {
+  // 获取每日土味情话
+  const loveTalkRes = await getLoveTalk();
+  const loveTalkContent = loveTalkRes.newslist[0].content;
+  loveTalkContent && (wechatTemplate.love.value = loveTalkContent);
+
   const accessTokenRes = await getAccessToken({
     grant_type: 'client_credential',
     appid: WECHAT_APPID,

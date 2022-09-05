@@ -3,10 +3,13 @@ import type {
   AccessTokenRes,
   SendTemplateData,
   SendTemplateParam,
-  SendTemplateRes
+  SendTemplateRes,
+  LoveTalkRes
 } from './type';
 
 import { wechatHttp } from '../../http';
+import fetch from 'node-fetch';
+import { TIANAPI_KEY } from '@config/global';
 
 enum Api {
   Token = '/cgi-bin/token',
@@ -30,3 +33,15 @@ export function postSendTemplate(data: SendTemplateData, params: SendTemplatePar
     params
   })
 }
+
+export const getLoveTalk = async (): Promise<LoveTalkRes> => {
+  try {
+    const loveTalkRes = await fetch(`http://api.tianapi.com/saylove/index?key=${TIANAPI_KEY}`, {
+      method: 'GET',
+    });
+    return loveTalkRes.json() as unknown as Promise<LoveTalkRes>;
+  } catch (err) {
+    console.log("土味情话请求失败", err);
+  }
+}
+

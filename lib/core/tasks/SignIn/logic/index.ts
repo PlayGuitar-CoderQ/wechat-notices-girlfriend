@@ -8,7 +8,10 @@ const juejinSignIn = async () => {
     const recommendRes = await getJueJingRecommend();
     const isGetRecommend = recommendRes.err_msg === "success";
 
-    isGetRecommend && postJueJingSignIn();
+    if (!isGetRecommend) return;
+    const res = await postJueJingSignIn();
+
+    console.log(`成功执行！时间：${new Date()}`, res);
   } catch(err) {
     console.log("err", err);
   }

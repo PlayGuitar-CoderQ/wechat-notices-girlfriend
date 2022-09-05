@@ -4,8 +4,8 @@
   "description": "利用微信公众号的消息通知能力给你的女朋友每日发送通知吧 🌸",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "tsnd -r tsconfig-paths/register lib/index.ts --files",
-    "prod": "pm2 start ./dist/index.js --name schedule-task -- --port 5200",
+    "dev": "cross-env NODE_ENV=dev tsnd -r tsconfig-paths/register lib/index.ts --files",
+    "prod": "cross-env NODE_ENV=prod pm2 start ./dist/index.js --name schedule-task -- --port 5200",
     "build": "tsc && tsc-alias",
     "test:watch": "jest --watch"
   },
@@ -19,6 +19,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "module-alias": "^2.2.2",
+    "node-fetch": "2.6.7",
     "node-schedule": "^2.1.0",
     "ts-node-dev": "^2.0.0"
   },
@@ -26,6 +27,7 @@
     "@types/axios": "^0.14.0",
     "@types/jest": "^28.1.8",
     "@types/node": "^18.7.13",
+    "@types/node-fetch": "^2.6.2",
     "@types/node-schedule": "^2.1.0",
     "cross-env": "^7.0.3",
     "jest": "^29.0.1",

@@ -1,5 +1,7 @@
-import { Wechat, SignIn } from './core';
 import type { TaskBase } from './core/base';
+
+import { Wechat, SignIn } from './core';
+import { LOCAL_CONFIG } from '@config/global';
 
 abstract class ServerBase {
   taskInstanceList: TaskBase[] = [];
@@ -22,8 +24,8 @@ class Server extends ServerBase {
 }
 
 const server = new Server(
-  new Wechat('0 0 20 * * *'),
-  new SignIn("0 0 11 * * *")
+  new Wechat(LOCAL_CONFIG.wechat_timed),
+  new SignIn(LOCAL_CONFIG.signIn_timed)
 );
 
 export default server;
