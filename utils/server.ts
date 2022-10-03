@@ -1,6 +1,7 @@
 import type { TaskBase } from '../tasks/base';
 
 import { Wechat, SignIn } from '../tasks/index';
+import { intervalLog } from '../utils/date';
 import { LOCAL_CONFIG } from '@config/global';
 
 abstract class ServerBase {
@@ -8,6 +9,7 @@ abstract class ServerBase {
   abstract install(tasks: TaskBase[]): void;
 
   run() {
+    intervalLog();
     this.taskInstanceList.forEach(task => task.scheduleTask());
   }
 }

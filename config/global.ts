@@ -5,6 +5,7 @@ interface GlobalEnv {
   WECHAT_TOUSER: string;
   SIGNIN_COOKIE: string;
   TIANAPI_KEY: string;
+  IS_START_INTERVAL_DATE_LOG: boolean
 }
 
 const LOCAL_CONFIG_ENV = {
@@ -21,6 +22,8 @@ const LOCAL_CONFIG_ENV = {
 const env = process.env.NODE_ENV as 'dev' | 'prod';
 const LOCAL_CONFIG = LOCAL_CONFIG_ENV[env]
 
+const IS_START_INTERVAL_DATE_LOG = process.env.NODE_ENV === "dev";
+
 const {
   WECHAT_APPID,
   WECHAT_SECRET,
@@ -28,7 +31,7 @@ const {
   WECHAT_TOUSER,
   SIGNIN_COOKIE,
   TIANAPI_KEY
-} = process.env as unknown as GlobalEnv;
+} = process.env as unknown as Omit<GlobalEnv, "IS_START_INTERVAL_DATE_LOG">;
 
 export {
   WECHAT_APPID,
@@ -37,5 +40,6 @@ export {
   WECHAT_TOUSER,
   SIGNIN_COOKIE,
   LOCAL_CONFIG,
-  TIANAPI_KEY
+  TIANAPI_KEY,
+  IS_START_INTERVAL_DATE_LOG
 }
