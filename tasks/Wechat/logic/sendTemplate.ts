@@ -1,5 +1,5 @@
 import { wechatTemplate } from './wechatTemplate'
-import { getAccessToken, postSendTemplate, getLoveTalk } from '@api/wechat';
+import { getAccessToken, postSendTemplate, getLoveTalk } from '@api/wechatApi';
 import {
   WECHAT_TOUSER,
   WECHAT_TEMPLATE_ID,

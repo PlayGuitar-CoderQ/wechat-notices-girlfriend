@@ -1,4 +1,4 @@
-import { scheduleTask as onScheduleTask } from '../scheduleTask';
+import { scheduleTask as onScheduleTask } from '../utils/scheduleTask';
 
 abstract class TaskBase {
   abstract timed: string;

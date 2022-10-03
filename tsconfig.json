@@ -10,7 +10,7 @@
     "outDir": "./dist",
     "noImplicitAny": true,
     "moduleResolution": "Node16",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
@@ -23,13 +23,13 @@
       "node"
     ],
     "paths": {
-      "@config/*": ["lib/config/*"],
-      "@api/*": ["lib/api/*"]
+      "@config/*": ["./config/*"],
+      "@api/*": ["./api/*"]
     }
   },
   "include": [
-      "./lib/*.ts",
-      "./lib/**/*.ts"
+      "./*.ts",
+      "./**/*.ts",
   ],
   "exclude": [
       "node_modules"

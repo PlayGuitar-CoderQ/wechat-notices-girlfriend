@@ -1,4 +1,4 @@
-import { getCheckSignInStatus, getJueJingRecommend } from '../lib/api/SignIn';
+import { getCheckSignInStatus, getJueJingRecommend } from '../api/signInApi';
 
 test("测试检查掘金签到接口是否正常", async () => {
   const signInStatuRes = await getCheckSignInStatus();

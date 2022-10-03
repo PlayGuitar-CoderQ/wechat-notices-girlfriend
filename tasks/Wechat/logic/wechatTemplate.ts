@@ -1,4 +1,4 @@
-import type { WechatTemplate } from '@api/wechat/type';
+import type { WechatTemplate } from '@api/wechatApi/type';
 
 const wechatTemplate: Record<string, WechatTemplate> = {
   love: {

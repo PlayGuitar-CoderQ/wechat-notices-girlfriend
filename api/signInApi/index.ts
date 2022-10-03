@@ -1,6 +1,6 @@
 import type { CheckSignInRes, RecommendAllFeedRes } from './type';
 
-import { signInHttp } from '../../http';
+import { signInHttp } from '../../utils/http/index';
 import { SIGNIN_COOKIE } from '@config/global';
 
 enum Api {

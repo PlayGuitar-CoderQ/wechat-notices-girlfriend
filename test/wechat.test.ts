@@ -1,14 +1,14 @@
-import type { AccessTokenRes } from '../lib/api/wechat/type';
+import type { AccessTokenRes } from '../api/wechatApi/type';
 
-import { scheduleTask } from '../lib/scheduleTask'
-import { getAccessToken, postSendTemplate } from '../lib/api/wechat';
-import { wechatTemplate } from '../lib/core/tasks/Wechat/logic/wechatTemplate';
+import { scheduleTask } from '../utils/scheduleTask'
+import { getAccessToken, postSendTemplate } from '../api/wechatApi';
+import { wechatTemplate } from '../tasks/Wechat/logic/wechatTemplate';
 import {
   WECHAT_APPID,
   WECHAT_SECRET,
   WECHAT_TOUSER,
   WECHAT_TEMPLATE_ID,
-} from '../lib/config/global';
+} from '../config/global';
 
 const TEST_MAX_TIME = 8 * 10000; // 测试最大执行时间
 

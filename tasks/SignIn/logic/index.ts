@@ -1,4 +1,4 @@
-import { getCheckSignInStatus, getJueJingRecommend, postJueJingSignIn } from '@api/SignIn';
+import { getCheckSignInStatus, getJueJingRecommend, postJueJingSignIn } from '@api/signInApi';
 
 const juejinSignIn = async () => {
   try {

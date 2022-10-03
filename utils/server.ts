@@ -1,6 +1,6 @@
-import type { TaskBase } from './core/base';
+import type { TaskBase } from '../tasks/base';
 
-import { Wechat, SignIn } from './core';
+import { Wechat, SignIn } from '../tasks/index';
 import { LOCAL_CONFIG } from '@config/global';
 
 abstract class ServerBase {

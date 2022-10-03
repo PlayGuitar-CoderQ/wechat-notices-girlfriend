@@ -7,7 +7,7 @@ import type {
   LoveTalkRes
 } from './type';
 
-import { wechatHttp } from '../../http';
+import { wechatHttp } from '../../utils/http/index';
 import fetch from 'node-fetch';
 import { TIANAPI_KEY } from '@config/global';
 

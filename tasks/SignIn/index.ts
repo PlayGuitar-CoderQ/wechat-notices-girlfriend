@@ -1,4 +1,4 @@
-import { TaskBase} from '../../base';
+import { TaskBase } from '../base';
 import { juejinSignIn } from './logic';
 
 class SignIn extends TaskBase {

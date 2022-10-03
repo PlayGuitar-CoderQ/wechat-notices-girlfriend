@@ -5,6 +5,6 @@ module.exports = {
   testEnvironment: 'node',
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {
-    '@config/(.*)':'<rootDir>/lib/config/$1'
+    '@config/(.*)':'<rootDir>/config/$1'
   },
 };
