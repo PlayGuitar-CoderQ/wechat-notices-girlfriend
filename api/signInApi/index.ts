@@ -1,4 +1,4 @@
-import type { CheckSignInRes, RecommendAllFeedRes } from './type';
+import type { CheckSignInRes, RecommendAllFeedRes, JueJingResult } from './type';
 
 import { signInHttp } from '../../utils/http/index';
 import { SIGNIN_COOKIE } from '@config/global';
@@ -40,7 +40,7 @@ export function getCheckSignInStatus() {
 }
 
 export function postJueJingSignIn() {
-  return signInHttp.post<RecommendAllFeedRes>({
+  return signInHttp.post<JueJingResult<any>>({
     headers: {
       "Cookie": SIGNIN_COOKIE
     },
