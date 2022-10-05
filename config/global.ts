@@ -5,7 +5,11 @@ interface GlobalEnv {
   WECHAT_TOUSER: string;
   SIGNIN_COOKIE: string;
   TIANAPI_KEY: string;
-  IS_START_INTERVAL_DATE_LOG: boolean
+  IS_START_INTERVAL_DATE_LOG: boolean,
+  SMTP_EMAIL: string,
+  SMTP_AUTH_KEY: string,
+  FROM_EMAIL: string,
+  TO_EMAIL: string
 }
 
 const LOCAL_CONFIG_ENV = {
@@ -30,7 +34,11 @@ const {
   WECHAT_TEMPLATE_ID,
   WECHAT_TOUSER,
   SIGNIN_COOKIE,
-  TIANAPI_KEY
+  TIANAPI_KEY,
+  SMTP_EMAIL,
+  SMTP_AUTH_KEY,
+  FROM_EMAIL,
+  TO_EMAIL
 } = process.env as unknown as Omit<GlobalEnv, "IS_START_INTERVAL_DATE_LOG">;
 
 export {
@@ -41,5 +49,9 @@ export {
   SIGNIN_COOKIE,
   LOCAL_CONFIG,
   TIANAPI_KEY,
-  IS_START_INTERVAL_DATE_LOG
+  IS_START_INTERVAL_DATE_LOG,
+  SMTP_EMAIL,
+  SMTP_AUTH_KEY,
+  FROM_EMAIL,
+  TO_EMAIL
 }

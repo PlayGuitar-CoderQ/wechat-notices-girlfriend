@@ -2,7 +2,7 @@ import type { AccessTokenRes } from '../api/wechatApi/type';
 
 import { scheduleTask } from '../utils/scheduleTask'
 import { getAccessToken, postSendTemplate } from '../api/wechatApi';
-import { wechatTemplate } from '../tasks/Wechat/logic/wechatTemplate';
+import { wechatTemplate } from '../tasks/Wechat/logic/dataConsumption';
 import {
   WECHAT_APPID,
   WECHAT_SECRET,

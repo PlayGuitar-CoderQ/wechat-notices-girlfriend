@@ -24,7 +24,9 @@
     ],
     "paths": {
       "@config/*": ["./config/*"],
-      "@api/*": ["./api/*"]
+      "@api/*": ["./api/*"],
+      "@utils/*": ["./utils/*"],
+      "@middle/*": ["./middle/*"],
     }
   },
   "include": [
