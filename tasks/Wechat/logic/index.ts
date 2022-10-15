@@ -34,9 +34,10 @@ const sendTemplate = async () => {
     access_token: accessTokenRes?.access_token
   })
 
+  sendTemplateRes.errmsg = loveTalkContent ? loveTalkContent : sendTemplateRes.errmsg;
+
   responseMiddle.sendResEmail(getIsHasErrInfo(sendTemplateRes));
  } catch(err) {
-  console.log(err);
   responseMiddle.sendResEmail();
  }
 }
